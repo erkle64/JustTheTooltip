@@ -1,0 +1,8 @@
+
+packages/*
+JustTheTooltip/.vs/*
+JustTheTooltip/obj/*
+JustTheTooltip/bin/*
+Libraries/*.dll
+.vs/*
+MigrationBackup/*
