@@ -13,7 +13,7 @@ namespace JustTheTooltip
 
         public static void TooltipFrame__generateItemContainer(TooltipFrame __instance, ItemTemplate itemTemplate, int itemCount)
         {
-            if (itemTemplate != null && itemTemplate.buildableObjectTemplate != null)
+            if (itemTemplate != null)
             {
                 if (!__instance.uiContainer_item_custom.activeSelf)
                 {
@@ -22,10 +22,19 @@ namespace JustTheTooltip
                 }
                 else
                 {
-                    __instance.uiText_itemContent.setText(__instance.uiText_itemContent.tmp.text + "\n");
+                    __instance.uiText_itemContent.setText(__instance.uiText_itemContent.tmp.text);
                 }
 
-                __instance.uiText_itemContent.setText(__instance.uiText_itemContent.tmp.text + string.Format("Size: {0}x{1}x{2}", itemTemplate.buildableObjectTemplate.size.x, itemTemplate.buildableObjectTemplate.size.y, itemTemplate.buildableObjectTemplate.size.z));
+                var text = __instance.uiText_itemContent.tmp.text;
+
+                text += "\n" + string.Format("Stack: {0}", itemTemplate.stackSize);
+
+                if (itemTemplate.buildableObjectTemplate != null)
+                {
+                    text += "\n" + string.Format("Size: {0}x{1}x{2}", itemTemplate.buildableObjectTemplate.size.x, itemTemplate.buildableObjectTemplate.size.y, itemTemplate.buildableObjectTemplate.size.z);
+                }
+
+                __instance.uiText_itemContent.setText(text.TrimStart('\n'));
             }
         }
     }

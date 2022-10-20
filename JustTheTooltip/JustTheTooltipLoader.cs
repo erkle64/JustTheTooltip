@@ -12,7 +12,7 @@ namespace JustTheTooltip
             MODNAME = "JustTheTooltip",
             AUTHOR = "erkle64",
             GUID = "com." + AUTHOR + "." + MODNAME,
-            VERSION = "1.0.0";
+            VERSION = "1.1.0";
 
         public static BepInEx.Logging.ManualLogSource log;
 
