@@ -2,6 +2,10 @@
 
 A mod for the game Foundry to add more detailed tooltips. 
 
+#### Extra Tooltips
+- Building size
+- Stack size
+
 #### Installation
 
 1. **Download**  
